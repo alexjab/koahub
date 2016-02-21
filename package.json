@@ -1,0 +1,17 @@
+{
+  "name": "koahub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alexjab <alexandre.jablon@gmail.com> (http://jablon.me/)",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^1.1.2",
+    "koa-json": "^1.1.1",
+    "koa-route": "^2.4.2"
+  }
+}
