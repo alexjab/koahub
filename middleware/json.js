@@ -2,12 +2,11 @@
 
 const json = require('koa-json');
 
+const config = require('../config');
+
 let pretty = false;
-
-module.exports = function (app) {
-  if (!app.context.config.env) {
-    pretty = true;
-  }
-
-  return json({ pretty });
+if (!config.env) {
+  pretty = true;
 }
+
+module.exports = json({ pretty });

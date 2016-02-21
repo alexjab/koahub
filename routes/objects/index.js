@@ -1,13 +1,18 @@
 module.exports = {
-  all,
-  one
+  getAll,
+  getOne
 };
 
-function* all() {
+function* getAll() {
   this.body = [{
+    id: 1,
     foo: 'bar'
   }];
 };
 
-function* one() {
+function* getOne() {
+  this.body = {
+    id: 1,
+    foo: 'bar'
+  };
 };

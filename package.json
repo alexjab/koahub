@@ -1,11 +1,11 @@
 {
   "name": "koahub",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "",
   "main": "server/index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive --bail --require co-mocha"
   },
   "author": "alexjab <alexandre.jablon@gmail.com> (http://jablon.me/)",
   "license": "MIT",
@@ -13,5 +13,12 @@
     "koa": "^1.1.2",
     "koa-json": "^1.1.1",
     "koa-route": "^2.4.2"
+  },
+  "devDependencies": {
+    "co-mocha": "^1.1.2",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "should": "^8.2.2",
+    "supertest": "^1.2.0"
   }
 }
