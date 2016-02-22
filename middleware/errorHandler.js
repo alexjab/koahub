@@ -9,10 +9,12 @@ module.exports = function*(next) {
     error = err;
   }
 
-  const message = error.message || 'Internal Server Error';
-  const details = error.details || [];
-  const status = error.status || 500;
+  if (error) {
+    const message = error.message || 'Internal Server Error';
+    const details = error.details || [];
+    const status = error.status || 500;
 
-  this.status = status;
-  this.body = { message, details };
+    this.status = status;
+    this.body = { message, details };
+  }
 };
