@@ -6,6 +6,7 @@ const app = koa();
 /* Some middleware */
 app.use(require('./middleware/json'));
 app.use(require('./middleware/version'));
+app.use(require('./middleware/callLogger'));
 
 /* Routes */
 require('./routes')(app);
