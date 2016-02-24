@@ -6,8 +6,8 @@ const router = require('koa-route');
 const app = koa();
 
 /* Some middleware */
-app.use(require('./middleware/json'));
-app.use(require('./middleware/version'));
+app.use(require('./middleware/jsonPrettifier'));
+app.use(require('./middleware/versionHandler'));
 app.use(require('./middleware/callLogger'));
 app.use(require('./middleware/errorHandler'));
 

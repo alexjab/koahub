@@ -4,7 +4,7 @@ module.exports = {
   },
   versions: {
     current: process.env.CURRENT_VERSION || 'v1',
-    all: ['v1', 'v2']
+    all: ['v1']
   },
   env: process.env.NODE_ENV,
   vendor: {
