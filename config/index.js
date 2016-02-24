@@ -1,18 +1,11 @@
-const versions = {
-  default: process.env.API_VERSION || 'v1',
-};
-try {
-  versions.all = process.env.VERSIONS.split(',').map(version => version.trim());
-} catch(e) {
-} finally {
-  versions.all = ['v1'];
-}
-
 module.exports = {
   urls: {
     base: process.env.BASE_URL || 'https://api.koahub.com',
   },
-  versions,
+  versions: {
+    current: process.env.CURRENT_VERSION || 'v1',
+    all: ['v1', 'v2']
+  },
   env: process.env.NODE_ENV,
   vendor: {
     names: {

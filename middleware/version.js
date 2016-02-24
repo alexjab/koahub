@@ -2,6 +2,9 @@
 
 const config = require('../config');
 
+const versions = {};
+config.versions.all.forEach(ver => versions[ver] = true);
+
 const versionRegex = new RegExp(`application\\/vnd.${config.vendor.names.snake}.(v\\d+)\\+json`);
 const mediaHeader = `X-${config.vendor.names.camel}-Media-Type`;
 
@@ -12,7 +15,7 @@ module.exports = function*(next) {
     version = this.headers.accept.match(versionRegex)[1];
   } catch(e) {
   } finally {
-    version = version || config.versions.default;
+    version = versions[version] ? version : config.versions.current;
   }
 
   this.version = version;

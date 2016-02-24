@@ -1,12 +1,7 @@
-const router = require('koa-route');
+const version = require('../services/versionRouter');
 
-const objects = require('./objects');
-
-const _default = require('./_default');
+const v1 = require('./v1');
 
 module.exports = function(app) {
-  app.use(router.get('/objects', objects.getAll));
-  app.use(router.get('/objects/:id', objects.getOne));
-
-  app.use(router.get('/', _default.index));
+  app.use(version('v1', v1, app));
 };
