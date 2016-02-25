@@ -28,19 +28,19 @@ const compose = require('koa-compose');
 
 const versions = {};
 
-module.exports = function version(version, router, app) {
+module.exports = function versionRouter(version, router) {
   const _app = koa();
   router(_app);
   versions[version] = compose(_app.middleware);
 
-  return function* (upstream) {
+  return function* routeRequest(upstream) {
     if (this.version !== version) {
       return yield* upstream;
     }
 
     const downstream = versions[version];
-    yield* downstream.call(this, function *() {
+    return yield* downstream.call(this, function* callUpstream() {
       yield* upstream;
     }.call(this));
-  }
-}
+  };
+};

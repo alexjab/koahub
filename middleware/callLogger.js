@@ -1,6 +1,8 @@
+/* eslint no-console:0 */
+
 const config = require('../config');
 
-module.exports = function*(next) {
+module.exports = function* callLogger(next) {
   if (!config.env) {
     const start = Date.now();
     yield next;
@@ -8,4 +10,4 @@ module.exports = function*(next) {
   } else {
     yield next;
   }
-}
+};

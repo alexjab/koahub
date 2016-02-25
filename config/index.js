@@ -4,7 +4,7 @@ module.exports = {
   },
   versions: {
     current: process.env.CURRENT_VERSION || 'v1',
-    all: ['v1']
+    all: ['v1'],
   },
   env: process.env.NODE_ENV,
   vendor: {
@@ -13,6 +13,6 @@ module.exports = {
       safe: process.env.VENDOR_SAFE_NAME || 'KoaHub.com',
       snake: process.env.VENDOR_SNAKE_NAME || 'koahub',
     },
-    domain: process.env.VENDOR_DOMAIN || 'koahub.com'
-  }
+    domain: process.env.VENDOR_DOMAIN || 'koahub.com',
+  },
 };
