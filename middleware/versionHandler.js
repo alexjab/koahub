@@ -4,8 +4,8 @@ const debug = require('debug')('koahub');
 
 const config = require('../config');
 
-const versions = {};
-config.versions.all.forEach(ver => { versions[ver] = true; });
+let versions = {};
+config.versions.all.forEach(ver => { versions[ver] = ver; });
 
 const versionRegex = new RegExp(`application\\/vnd.${config.vendor.names.snake}.(v\\d+)\\+json`);
 const mediaHeader = `X-${config.vendor.names.camel}-Media-Type`;
@@ -18,7 +18,7 @@ module.exports = function* versionHandler(next) {
   } catch (e) {
     debug(`No version found in Accept header, defaulting to ${config.versions.current}`);
   } finally {
-    version = versions[version] ? version : config.versions.current;
+    version = versions[version] || config.versions.current;
   }
 
   this.version = version;
