@@ -1,6 +1,8 @@
 # koahub
 A koa server in a can
 
+[![Circle CI](https://circleci.com/gh/alexjab/koahub.svg?style=svg)](https://circleci.com/gh/alexjab/koahub)
+
 Everything you need to quickly get started with koa.
 
 ```
