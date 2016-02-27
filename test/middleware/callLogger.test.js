@@ -9,7 +9,7 @@ const callLogger = require('../../middleware/callLogger.js');
 
 describe('Middleware - callLogger', () => {
   it('should log the query', function* test() {
-    const app = new koa();
+    const app = koa();
     app.use(callLogger);
     app.use(function* error() {
       this.body = { foo: 'bar' };
@@ -29,7 +29,7 @@ describe('Middleware - callLogger', () => {
   it('should not log the query (not local environment)', function* test() {
     config.env = 'preproduction';
 
-    const app = new koa();
+    const app = koa();
     app.use(callLogger);
     app.use(function* error() {
       this.body = { foo: 'bar' };

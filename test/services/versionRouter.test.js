@@ -2,7 +2,6 @@ const should = require('should');
 const supertest = require('supertest');
 
 const koa = require('koa');
-const router = require('koa-route');
 
 const versionRouter = require('../../services/versionRouter.js');
 
@@ -18,7 +17,7 @@ describe('Services - versionRouter', () => {
         this.body = { version: 'v2' };
       });
     }
-    const app = new koa();
+    const app = koa();
     app.use(function*(next) {
       this.version = 'v1';
       yield next;
@@ -49,7 +48,7 @@ describe('Services - versionRouter', () => {
         this.body = { version: 'v2' };
       });
     }
-    const app = new koa();
+    const app = koa();
     app.use(function*(next) {
       this.version = 'v2';
       yield next;
@@ -80,14 +79,14 @@ describe('Services - versionRouter', () => {
         yield next;
       });
     }
-    const app = new koa();
+    const app = koa();
     app.use(function*(next) {
       this.version = 'v2';
       yield next;
     });
     app.use(versionRouter('v1', router1));
     app.use(versionRouter('v2', router2));
-    app.use(function*(next) {
+    app.use(function*() {
       this.body = { version: 'missed' };
     });
 
@@ -103,5 +102,3 @@ describe('Services - versionRouter', () => {
     result.body.should.have.property('version', 'missed');
   });
 });
-
-

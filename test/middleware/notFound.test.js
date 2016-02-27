@@ -8,7 +8,7 @@ const notFound = require('../../middleware/notFound.js');
 
 describe('Middleware - notFound', () => {
   it('should log the query', function* test() {
-    const app = new koa();
+    const app = koa();
     app.use(errorHandler);
     app.use(notFound);
 

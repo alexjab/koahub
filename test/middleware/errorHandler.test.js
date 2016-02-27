@@ -9,7 +9,7 @@ const errorHandler = require('../../middleware/errorHandler.js');
 
 describe('Middleware - errorHandler', () => {
   it('should return a formatted error 500 (original error message)', function* test() {
-    const app = new koa();
+    const app = koa();
     app.use(errorHandler);
     app.use(function* error() {
       this.throw(400, 'Foo Bar');
@@ -31,7 +31,7 @@ describe('Middleware - errorHandler', () => {
     const originalEnv = config.env;
     config.env = 'production';
 
-    const app = new koa();
+    const app = koa();
     app.use(errorHandler);
     app.use(function* error() {
       throw new Error('Foo Bar');
@@ -52,7 +52,7 @@ describe('Middleware - errorHandler', () => {
   });
 
   it('should return a formatted error 500 (no-instructive error message)', function* test() {
-    const app = new koa();
+    const app = koa();
     app.use(errorHandler);
     app.use(function* error() {
       throw new Error();

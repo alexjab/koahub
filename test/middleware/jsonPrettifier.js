@@ -4,13 +4,11 @@ const rewire = require('rewire');
 
 const koa = require('koa');
 
-const config = require('../../config');
-
 const jsonPrettifier = require('../../middleware/jsonPrettifier.js');
 
 describe('Middleware - jsonPrettifier', () => {
   it('should print pretty json (no environment set)', function* test() {
-    const app = new koa();
+    const app = koa();
     app.use(jsonPrettifier());
     app.use(function* body() {
       this.body = { foo: 'bar' };
@@ -29,7 +27,7 @@ describe('Middleware - jsonPrettifier', () => {
   });
 
   it('should print pretty json (test environment)', function* test() {
-    const app = new koa();
+    const app = koa();
     const _jsonPrettifier = rewire('../../middleware/jsonPrettifier.js');
     _jsonPrettifier.__set__('config', { env: 'test' });
 

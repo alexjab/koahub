@@ -3,13 +3,12 @@ const supertest = require('supertest');
 const rewire = require('rewire');
 
 const koa = require('koa');
-const router = require('koa-route');
 
 const versionHandler = require('../../middleware/versionHandler');
 
 describe('Services - versionHandler', () => {
   it('should return v1 (no version specified)', function* test() {
-    const app = new koa();
+    const app = koa();
     app.use(versionHandler);
     app.use(function*() {
       this.body = { version: this.version };
@@ -34,7 +33,7 @@ describe('Services - versionHandler', () => {
       v2: 'v2'
     });
 
-    const app = new koa();
+    const app = koa();
     app.use(_versionHandler);
     app.use(function*() {
       this.body = { version: this.version };

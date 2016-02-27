@@ -1,5 +1,3 @@
-const url = require('url');
-
 const should = require('should');
 const supertest = require('supertest');
 
