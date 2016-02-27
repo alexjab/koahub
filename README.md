@@ -35,10 +35,11 @@ koahub
     │   ├── notFound.test.js
     │   └── versionHandler.js
     ├── routes
-    │   ├── _default.test.js
-    │   └── objects.test.js
+    │   └── v1
+    │       ├── _default.test.js
+    │       └── objects.test.js
     └── services
         └── versionRouter.test.js
 
-11 directories, 21 files
+12 directories, 23 files
 ```
