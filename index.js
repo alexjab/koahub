@@ -5,7 +5,7 @@ const koa = require('koa');
 const app = koa();
 
 /* Some middleware */
-app.use(require('./middleware/jsonPrettifier'));
+app.use(require('./middleware/jsonPrettifier')());
 app.use(require('./middleware/versionHandler'));
 app.use(require('./middleware/callLogger'));
 app.use(require('./middleware/errorHandler'));
