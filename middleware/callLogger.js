@@ -1,5 +1,3 @@
-/* eslint no-console:0 */
-
 const config = require('../config');
 
 module.exports = function* callLogger(next) {

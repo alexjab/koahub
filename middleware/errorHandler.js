@@ -1,7 +1,5 @@
 'use strict';
 
-/* eslint no-console:0 */
-
 const config = require('../config');
 
 module.exports = function* errorHandler(next) {
