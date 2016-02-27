@@ -3,7 +3,7 @@ const url = require('url');
 const should = require('should');
 const supertest = require('supertest');
 
-const app = require('../../index.js');
+const app = require('../../../index.js');
 
 const request = supertest.agent(app.listen());
 
