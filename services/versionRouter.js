@@ -2,13 +2,13 @@
  * Main differences:
  *  - it relies on this.version (which can be set
  *    however we want), and not on any specific header,
- *    query or param.
+ *    query or param,
  *  - it does not use semver or anything like it,
  *    and does simple string equality. In the case of an
  *    API version, I fail to see the point of using
  *    semver, since you probably don't want to roll
  *    tons of different versions, at the risk of
- *    confusing your audience.
+ *    confusing your users.
  * Here is how it works:
  * - the router is applied to a new, separate, "virtual" koa app,
  *   which chains all the middleware of the router when calling app.use

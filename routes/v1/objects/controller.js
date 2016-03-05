@@ -1,4 +1,4 @@
-function* getAll() {
+function* getAll(next) {
   this.body = [{
     id: 1,
     foo: 'bar',

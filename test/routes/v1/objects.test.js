@@ -8,7 +8,7 @@ const app = require('../../../index.js');
 const request = supertest.agent(app.listen());
 
 describe('Objects API', () => {
-  const objectsUrl = '/objects/';
+  const objectsUrl = '/objects';
 
   describe('GET /objects - Get all objects', () => {
     it('should get all objects', function* test() {
@@ -23,7 +23,7 @@ describe('Objects API', () => {
 
     it('should get one object', function* test() {
       const result = yield cb => request
-        .get(url.resolve(objectsUrl, '1'))
+        .get(objectsUrl + '/1')
         .expect('Content-Type', /application\/json/)
         .expect(200)
         .end(cb);

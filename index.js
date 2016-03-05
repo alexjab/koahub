@@ -9,6 +9,7 @@ app.use(require('./middleware/jsonPrettifier')());
 app.use(require('./middleware/versionHandler'));
 app.use(require('./middleware/callLogger'));
 app.use(require('./middleware/errorHandler'));
+app.use(require('./middleware/pagination'));
 
 /* Routes */
 require('./routes')(app);
