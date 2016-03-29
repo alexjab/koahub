@@ -1,5 +1,10 @@
 'use strict';
 
+/*
+ * The pagination middleware is an app middleware which
+ * creates and populates the Link header with pagination information.
+ */
+
 const uri = require('urijs');
 
 module.exports = function* pagination(next) {

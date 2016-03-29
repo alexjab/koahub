@@ -16,6 +16,7 @@ koahub
 │   ├── errorHandler.js
 │   ├── jsonPrettifier.js
 │   ├── notFound.js
+│   ├── pagination.js
 │   └── versionHandler.js
 ├── routes
 │   ├── index.js
@@ -26,6 +27,7 @@ koahub
 │       └── objects
 │           └── controller.js
 ├── services
+│   ├── pagination.js
 │   └── versionRouter.js
 └── test
     ├── middleware
@@ -33,6 +35,7 @@ koahub
     │   ├── errorHandler.test.js
     │   ├── jsonPrettifier.js
     │   ├── notFound.test.js
+    │   ├── pagination.test.js
     │   └── versionHandler.js
     ├── routes
     │   └── v1
@@ -41,5 +44,5 @@ koahub
     └── services
         └── versionRouter.test.js
 
-12 directories, 23 files
+12 directories, 26 files
 ```
